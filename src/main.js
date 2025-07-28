@@ -3,7 +3,7 @@ const App = Express()
 const AsciiTable = require("ascii-table")
 
 const FS = require("node:fs")
-const Paths = FS.readdirSync("./Paths").filter(i => i.endsWith("js"))
+const Paths = FS.readdirSync("./src/Paths").filter(i => i.endsWith("js"))
 
 const LoadedTable = new AsciiTable("Loaded Files")
 const PORT = 8080
@@ -13,7 +13,7 @@ LoadedTable.setHeading("File", "Status")
 for (const Path of Paths) {
     var Status = "No"
     try {
-        const PathFile = require(`./Paths/${Path}`)
+        const PathFile = require(`./src/Paths/${Path}`)
         App.use(PathFile)
         Status = "Yes"
     } catch(e) {
