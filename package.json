@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "generate-password": "^1.7.1",
+    "quick.db": "^9.1.7",
+    "write-file-atomic": "^6.0.0"
+  }
+}
